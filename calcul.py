@@ -8,28 +8,46 @@ continuer = 'Oui'
 
 while continuer.lower() == 'oui':
     print("Que voulez-vous faire?")
-    print("\n1-Conversions USD/EUR",
-          "\n2-Conversions USD/JPY", "\n3-Conversions USD/GBP")
+    print("\n1-Conversions USD/EUR", "\n2-Conversions USD/JPY", "\n3-Conversions USD/GBP")
     choix = input()
     print("Vous avez choisi", choix)
 
     if choix == '1':
         print("Entrez le nombre d'USD que vous voulez convertir en euros:")
-        value = float(input())
-        euros = value * EUR
-        print("Montant équivalent en EUR :", euros)
+        try:
+            if input().isnumeric():
+                value = float(input())
+                euros = value * EUR
+                print("Montant équivalent en EUR :", euros)
+            else:
+                raise ValueError("Input is a null value or not a number")
+        except ValueError as e:
+            print(e)
 
     elif choix == '2':
         print("Entrez le nombre d'USD que vous voulez convertir en yen:")
-        value = float(input())
-        yen = value * JPY
-        print("Montant équivalent en JPY :", yen)
+        try:
+            if input().isnumeric():
+                value = float(input())
+                yen = value * JPY
+                print("Montant équivalent en JPY :", yen)
+            else:
+                raise ValueError("Input is a null value or not a number")
+        except ValueError as e:
+            print(e)
+
 
     elif choix == '3':
         print("Entrez le nombre d'USD que vous voulez convertir en livres:")
-        value = float(input())
-        livres = value * GBP
-        print("Montant équivalent en GBP :", livres)
+        try:
+            if input().isnumeric():
+                value = float(input())
+                livres = value * GBP
+                print("Montant équivalent en GBP :", livres)
+            else:
+                raise ValueError("Input is a null value or not a number")
+        except ValueError as e:
+            print(e)
 
     continuer = input(
         "Voulez-vous effectuer une autre conversion ? (Oui/Non) ")
