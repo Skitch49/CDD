@@ -15,8 +15,9 @@ while continuer.lower() == 'oui':
     if choix == '1':
         print("Entrez le nombre d'USD que vous voulez convertir en euros:")
         try:
-            if input().isnumeric():
-                value = float(input())
+            value = input()
+            if value.isnumeric():
+                value = float(value)
                 euros = value * EUR
                 print("Montant équivalent en EUR :", euros)
             else:
@@ -27,8 +28,9 @@ while continuer.lower() == 'oui':
     elif choix == '2':
         print("Entrez le nombre d'USD que vous voulez convertir en yen:")
         try:
-            if input().isnumeric():
-                value = float(input())
+            value = input()
+            if value.isnumeric():
+                value = float(value)
                 yen = value * JPY
                 print("Montant équivalent en JPY :", yen)
             else:
@@ -40,8 +42,9 @@ while continuer.lower() == 'oui':
     elif choix == '3':
         print("Entrez le nombre d'USD que vous voulez convertir en livres:")
         try:
-            if input().isnumeric():
-                value = float(input())
+            value = input()
+            if value.isnumeric():
+                value = float(value)
                 livres = value * GBP
                 print("Montant équivalent en GBP :", livres)
             else:
