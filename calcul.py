@@ -1,6 +1,7 @@
 EUR = 0.85
 JPY = 110
 GBP = 0.75
+MDL = 0.00001
 
 print("Bienvenue dans le Convertisseur de Devises en PYTHON.")
 
@@ -8,7 +9,7 @@ continuer = 'Oui'
 
 while continuer.lower() == 'oui':
     print("Que voulez-vous faire?")
-    print("\n1-Conversions USD/EUR", "\n2-Conversions USD/JPY", "\n3-Conversions USD/GBP")
+    print("\n1-Conversions USD/EUR", "\n2-Conversions USD/JPY", "\n3-Conversions USD/GBP", "\n4-Conversions USD/MDL")
     choix = input()
     print("Vous avez choisi", choix)
 
@@ -47,6 +48,19 @@ while continuer.lower() == 'oui':
                 value = float(value)
                 livres = value * GBP
                 print("Montant équivalent en GBP :", livres)
+            else:
+                raise ValueError("Input is a null value or not a number")
+        except ValueError as e:
+            print(e)
+
+    elif choix == '5':
+        print("Entrez le nombre d'USD que vous voulez convertir en livres:")
+        try:
+            value = input()
+            if value.isnumeric():
+                value = float(value)
+                lei = value * MDL
+                print("Montant équivalent en MDL :", lei)
             else:
                 raise ValueError("Input is a null value or not a number")
         except ValueError as e:
